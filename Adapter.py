@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import json
 
+
 class DataProvider:
     def get_data(self):
         raise NotImplementedError
@@ -28,10 +29,10 @@ class XMLtoJSONAdapter(DataProvider):
 
         return data
 
+
 def client_code(provider: DataProvider):
     data = provider.get_data()
     print("converted json data :", json.dumps(data))
-
 
 
 if __name__ == "__main__":
@@ -39,6 +40,3 @@ if __name__ == "__main__":
     adapter = XMLtoJSONAdapter(xml_provider)
 
     client_code(adapter)
-
-
-
